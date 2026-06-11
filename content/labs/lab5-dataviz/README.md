@@ -1,4 +1,4 @@
-# Lab 3 - Cloudera Data Vizualization
+# Lab 5 - Cloudera Data Vizualization
 
 In this lab you will dive deeper into Cloudera Data Vizualization by using the output of the machine learning model to enrich your DataViz application.
 
