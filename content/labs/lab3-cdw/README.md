@@ -53,7 +53,7 @@ View the schema and first few rows to get a quick overview of the columns and da
 
 ```sql
 SELECT * 
-FROM telcodb.telco_data_curated 
+FROM `USERNAME`.telco_data_curated 
 LIMIT 10;
 ```
 
@@ -63,7 +63,7 @@ Count the total number of rows to understand the size of the dataset.
 
 ```sql
 SELECT COUNT(*) 
-FROM telcodb.telco_data_curated;
+FROM `USERNAME`.telco_data_curated;
 ```
 
 ![Cloudera Data Warehouse Query 2](cdw_vw_query_2.png)
@@ -72,7 +72,7 @@ Examine the distribution of key categorical columns like `gender` and the target
 
 ```sql
 SELECT Churn, COUNT(*) AS count 
-FROM telcodb.telco_data_curated 
+FROM `USERNAME`.telco_data_curated 
 GROUP BY Churn;
 ```
 
@@ -90,7 +90,7 @@ SELECT
   COUNT(*) AS total_customers,
   SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
   CAST(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS churn_rate
-FROM telcodb.telco_data_curated
+FROM `USERNAME`.telco_data_curated
 GROUP BY Contract
 ORDER BY churn_rate DESC;
 ```
@@ -104,7 +104,7 @@ SELECT
   Churn,
   AVG(CAST(MonthlyCharges AS DOUBLE)) AS avg_monthly_charges,
   AVG(CAST(TotalCharges AS DOUBLE)) AS avg_total_charges
-FROM telcodb.telco_data_curated
+FROM `USERNAME`.telco_data_curated
 GROUP BY Churn;
 ```
 
@@ -124,7 +124,7 @@ SELECT
   COUNT(*) AS total_customers,
   SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
   CAST(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS churn_rate
-FROM telcodb.telco_data_curated
+FROM `USERNAME`.telco_data_curated
 GROUP BY
   CASE
     WHEN CAST(tenure AS INT) <= 12 THEN '0-12 months'
