@@ -147,69 +147,6 @@ The Processors will now show as running (:material-play:). After a few moments, 
 
 ![NiFi Successful Flow](cdf_nifi_successful_flow.png)
 
-### Inspect and Modify the Flow
-
-Flow Management allows us to see and access data in motion during the execution of the data flow.
-
-Between Processors **ConsumeKafkaRecord_2_6** and **MergeContent**, there is a connection. This connection is what joins the Processors and transmits data from one to the other, and you can check how much data is queued at every step of the process.
-
-Let's see this in action by building up the queue. We have already consumed Kafka data so let's modify the  ConsumeKafkaProcessor to pull the data with different kafka consumer groups.
-
-First, right-click on **MergeContent** processor and click **Stop**. Repeat the same for processor **ConsumeKafkaRecord_2_6**
-
-![NiFi Stop Processor](cdf_nifi_stop_processor.png)
-
-Right click on **ConsumeKafkaRecord_2_6** processor and click on **Configure**
-
-![NiFi Configure Processor](cdf_nifi_configure_processor.png)
-
-![NiFi Configure Processor](cdf_nifi_modify_config.png)
-
-Under the **Properties** tab, change the consumer group id by clicking on **Group ID** value and changing the consumer group id (eg. `#{CDP Workload Username}-group-v1`). Click **OK** and **Apply**
-
-![NiFi Change Group ID property](cdf_nifi_change_group_id_config.png)
-
-Start the **ConsumeKafkaRecord_2_6** processor by right clicking and **Start**.
-
-![NiFi Start Processor](cdf_nifi_start_processor.png)
-
-You will see data start to queue up in the connector shortly after starting.
-
-![NiFi Queue Filling](cdf_nifi_queue_filling.png)
-
-!!! tip
-    You can refresh the counter by pressing the Ctrl+R (Windows) or Command+R (Mac) combination on the keyboard.
-
-At some point there should be a number next to the legend _Queued_ in the connection between **ConsumeKafkaRecord_2_6** and **MergeContent**.
-
-To see the queued data, right-click on the connection and click on the option **List Queue**, opening a popup window.
-
-![NiFi List Queue](cdf_nifi_list_queue.png)
-
-The next popup window lists the queued data. Click on the information icon (:material-information:) that appears
-on the left side to view the events.
-
-![NiFi View Queue](cdf_nifi_view_queue.png)
-
-Once the FlowFile detail window appears, click on the button **VIEW** to open the content of consumed events.
-
-![NiFi View Flow File](cdf_nifi_view_flowfile.png)
-
-The new window that opens shows the data of the FlowFile content. Being in AVRO format, it is not fully readable. A deserializer must be selected to correctly display the data. For this, in the upper left, select the option `formatted` from the **View as** menu.
-
-![NiFi View Flow File Content](cdf_nifi_view_flowfile_content.png)
-
-Now you can display the data correctly. Notice that the fields or attributes indicated at the beginning of the workshop appear. You can close that FlowFile window and the popups, returning to the canvas with the four Processors.
-
-![NiFi View Flow File Formatted Content](cdf_nifi_view_flowfile_content_formatted.png)
-
-Start the stopped **MergeContent** processor again to resume the flow. Remember that you can refresh the flow counters with the combination `Control+R` or `Command+R`.
-
-![Start Merge Content Processor](cdf_nifi_start_mergerecords_processor.png)
-
-If the previous steps were executed correctly, the connection of the Processor **PutIceberg** to a funnel should be of type success.
-
-![Put Iceberg Processor Success](cdf_nifi_puticeberg_processor_funnel.png)
 
 ### Bonus - Data Provenance
 
