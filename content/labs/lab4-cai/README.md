@@ -1,4 +1,4 @@
-# Lab 2 - Cloudera AI
+# Lab 4 - Cloudera AI
 
 In this lab you will get hands-on with Cloudera AI by training a machine learning model. You will then deploy the model as a REST API for real time predication.
 
