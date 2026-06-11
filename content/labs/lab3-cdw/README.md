@@ -40,7 +40,7 @@ In the Data Warehouse Overview page, click on the **Virtual Warehouses** tab.
 
 ![Cloudera Data Warehouse Open Virtual Warehouse](cdw_vw_home_page.png)
 
-Select the Impala Virtual Warehouse instace your user was assigned and click the **Hue** app
+Select the Impala Virtual Warehouse instace your user was assigned and click the **Cloudera Data Explorer** app
 
 #### Basic Data Exploration
 
