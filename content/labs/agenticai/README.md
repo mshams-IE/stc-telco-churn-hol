@@ -1,132 +1,167 @@
-# Bonus Lab - Cloudera Agentic AI
+# Lab - Agent Studio Use Case: AI Customer Retention (Telecom)
 
-In this lab you will Explore Cloudera Agentic Studio as a lowcode / nocode way to develop Agentic AI applications.
+In this lab, you will explore Cloudera Agent Studio to deploy an AI-driven Customer Retention application for a Telecom use case. 
 
-![Lab 5](lab5_dataviz.png)
+**Use Case Scenario:** AI Customer Retention delivers hyper-personalized telecom experiences using AI Agents that analyze customer profiles and usage behavior, predict churn risk, review competitor offers, and recommend the right plans, add-ons, or loyalty benefits — all in real-time on Cloudera AI.
+
+**Objective:** Stay ahead in a competitive telecom market by leveraging AI agents that continuously monitor customer activity and market dynamics — transforming customer experience and driving proactive retention strategies.
+
+**Business Impact:**
+* **Enhanced Customer Loyalty & Engagement:** AI-powered personalization increases satisfaction and reduces churn by offering timely upgrades, rewards, and retention incentives tailored to each user.
+* **Boosted Revenue via Upsell & Cross-sell:** Real-time usage insights empower agents to recommend data boosters, family plans, roaming packs, and OTT bundles — maximizing revenue per user.
+* **Competitive Edge through Market Intelligence:** Continuous analysis of competitor promotions enables SmartTel to respond instantly with attractive offers and localized pricing advantages.
+* **Operational Efficiency & Regulatory Alignment:** Automated, auditable decision-making minimizes manual workloads, enhances campaign ROI, and ensures alignment with data privacy and regional telecom regulations.
+
+![Telecom Agentic Workflow Architecture](telecom_workflow_architecture_diagram.png)
 
 ## Requirements
 
-Ensure the following requirements are met in order to run this exercise:
+Ensure the following requirements and credentials are met in order to run this exercise (these will be shared by the Trainers):
+- [ ] Workload User and Password from User Profile
+- [ ] Virtual Warehouse Name from CDW Impala (`hive_cai_data_connection_name`)
+- [ ] Database Name from CDW Impala (`default_database`)
 
-- [ ] Name of the Impala Data Warehouse assigned to your user
-- [ ] Name of Data Vizualization Cluster assigned to your user
-- [ ] Cloudera AI models deployed as part of [Lab 4 - Cloudera AI](../lab4-cai/README.md)
-
-!!! info
-    The workshop instructor will assign your user to a Data Warehouse and Data Vizualisation cluster.
+---
 
 ## Tasks
 
-### Open Cloudera Data Vizualization in Data Warehouse
+### Step 1: Log in to Cloudera Platform & AI Workbench
 
-From the Cloudera on cloud Tenant home page, click on Data Warehouse.
+1. Login using the credentials provided by your trainer.
+2. Update **Workload Password** > **Management Console** > **User Profile**.
+3. Click on **Cloudera AI** > Select the **Cloudera-AI-Workshop** workbench.
+   
+   ![Select Cloudera AI Workbench](cai_select_workshop_workbench.png)
 
-![Cloudera on Cloud Tenant Home](cloudera_on_cloud_tenant_home.png)
+4. Go to **Projects** on the left side panel > Select **Public Projects** from the dropdown.
+5. Click on the publicly available project named **HOL_Agent_Studio**.
+   
+   ![Select Public Project HOL_Agent_Studio](cai_select_public_project.png)
 
-In the pop up window that appears, click on **Manage Data Warehouse** to open the Data Warehouse Home page.
+6. Click on **AI Studios** > **Agent Studio**.
+   
+   ![Open Agent Studio from Left Menu](cai_open_agent_studio.png)
 
-![Cloudera on Cloud Tenant Home](cloudera_on_cloud_tenant_home_cdw.png)
+### Step 2: Understand the Agent Studio Environment
 
-The Data Warehouse Home shows the deployed database catalogs, and virtual warehouses and allows access to data vizualization clusters.
+Take a moment to understand the main components of the Agent Studio interface:
+1. **Agentic Workflows:** Dashboard with End-to-End Agentic Workflows & Use Cases Development and Deployment.
+2. **Tools Catalog:** Build custom Python tools to enhance your AI agents capabilities and supercharge your workflows.
+3. **LLMs:** Hybrid Muti LLM Model Registry to Register language models which will be used to build agents and workflows.
+4. **Deployed Workflows:** Single Pane of Glass to All Production Workflow and Use Cases.
+5. **Draft Workflows:** Management and Collaboration all the Development Workflows.
+6. **Workflow Templates:** Workflows Catalog to share and re-use the workflows.
+7. **Create:** Build your Agentic Workflow from scratch.
 
-Click on **Data Vizualization** from the left menu.
+   ![Agent Studio Environment Overview](agent_studio_dashboard_overview.png)
 
-![Cloudera Data Warehouse](cdw_home_page.png)
+### Step 3: [OPTIONAL] Create the WorkFlow Template for Telco 
 
-In Data Visualization, click on the **Data Viz** button for the cluster instance your user was assigned.
+*(Note: This step is optional based on the lab type. If the trainer has already created the Workflow Template, you can ignore this step. OR you can follow this step to deploy a new workflow from scratch - Confirm with your Trainer.)*
 
-![CDW Open Data Viz](cdw_open_data_viz.png)
+1. Click **Create** > **AI Customer Retention Workflow**.
+2. Configure the following toggles:
+   * **Is Conversational:** ON
+   * **Manager Agent:** ON
+   * **Default Manager**
 
-### Add Field to Data Vizualization Dataset
+   ![Configure Agentic Workflow Settings](configure_workflow_toggles.png)
 
-Edit the previously created Dataset, in **Data** -> **`USERNAME`.telco_data_curated**.
+3. Create the following 4 Agents:
+   * **Customer Analyst**
+     * **Role:** Customer Segmentation and Profiling Specialist.
+     * **Backstory:** Skilled in profiling and segmentation using customer data for personalized telecom strategies.
+     * **Goal:** Build customer personas using demographics, location, tenure, and ARPU to inform personalization strategies from `customer_profiles` table.
+     * **Tool:** CRM Database
+   * **Usage Analyst**
+     * **Role:** Interprets usage data including voice, SMS, data consumption, and recharge behavior.
+     * **Backstory:** Specializes in behavioral analytics to support targeting for marketing and engagement.
+     * **Goal:** Detect customer usage patterns like data, voice, sms, recharge, prepaid churn risks, or upsell-ready profiles using the data from `usage_history`.
+     * **Tool:** Core DataBase
+   * **Product Recommender**
+     * **Role:** Maintains detailed knowledge of telecom plans, loyalty programs, and ongoing offers.
+     * **Backstory:** Product expert helping align offerings with usage trends and customer potential.
+     * **Goal:** Match customers with the most relevant offers based on their profile and usage from `offer_catalog`.
+     * **Tool:** Product Catalog
+   * **Competitive Insights**
+     * **Role:** External Market Intelligence Agent.
+     * **Backstory:** Competitive intelligence agent scraping the latest Telecom promotions. Website shared by the user.
+     * **Goal:** Scrape website content given by the user for prepaid, postpaid, voice, data, sms offers and compare with internal product catalog, and propose competitive positioning.
+     * **Tool:** Competitive Offerings
 
-![CDW Data Viz Dashboard CML Field Step 1](cdw_dv_cml_dashboard_step1.png)
+   ![Create and Configure AI Agents](create_ai_agents_setup.png)
 
-Once in the Dataset, go to **Fields** in the left menu and then click on **EDIT FIELDS** to edit the fields of your dataset.
+4. Configure the Connection Parameters (Confirm with the Trainers):
+   * `workload_user`: Workload user from User Profile.
+   * `workload_pass`: Workload password from User Profile.
+   * `hive_cai_data_connection_name`: Virtual Warehouse Name from CDW Impala.
+   * `default_database`: Database Name from CDW Impala.
+5. Click **Save & Next**.
 
-![CDW Data Viz Dashboard CML Field Step 2](cdw_dv_cml_dashboard_step2.png)
+   ![Configure Connection Parameters](configure_database_connections.png)
 
-In the list of **Dimensions**, click the down arrow of the last field in the list, and select the option **Clone**.
+### Step 4: Building the Use Case Workflow
 
-![CDW Data Viz Dashboard CML Field Step 3](cdw_dv_cml_dashboard_step3.png)
+1. Click **Create** > Select the Workflow from the **AI Customer Retention Template**.
+2. Name the use case: **Userxxx - AI Customer Retention** (replace `Userxxx` with your assigned user).
+   
+   ![Select AI Customer Retention Template](select_telco_template.png)
 
-Once the field is cloned, click on the pencil next to the field to edit it.
+3. **Understand the Workflow and Agents:**
+   * Click **Edit Agents** to understand the functionality of each agent and the flow (Name, Role, Backstory, Goal).
+   * ⚠️ **Don’t Make Any Changes but Just Close.**
+   * Click **Save & Next** until you arrive at the **Configure** page.
+   
+   ![View Agent Details](view_agent_details_readonly.png)
 
-![CDW Data Viz Dashboard CML Field Step 4](cdw_dv_cml_dashboard_step4.png)
+4. **Configure the requested parameters:**
+   * Confirm with the Trainers for credentials.
+   * `workload_user`: Workload user from User Profile.
+   * `workload_pass`: Workload password from User Profile.
+   * `hive_cai_data_connection_name`: Virtual Warehouse Name from CDW Impala.
+   * `default_database`: Database Name from CDW Impala.
+   * Click **Save & Next**.
+   
+   ![Configure Workspace Parameters](configure_workspace_parameters.png)
 
-In the popup window that appears, enter the name of the new field in **Display Name**. We suggest that you enter `ChurnScore`.
+*(FYI Only) Overview of the Data Base, Tables and Actual Data:*
+* **CRM Database:** It has `customer_profiles` table with the below data fields: `CustomerID, Name, Gender, Age, City, Country, PlanType, TenureMonths, ARPU`.
+* **Core Database:** It has `usage_history` table with the below data fields: `CustomerID, UsageDate, DataUsed_GB, VoiceMinutes, SMSCount, RechargeAmount`.
+* **Product Catalog:** It has `offer_catalog` table with the below data fields: `OfferID, OfferType, OfferName, Description, Eligibility, Discount, Validity`.
+* **Competitive Offerings:** It is a web scraper that fetches data from any given competitor website.
 
-![CDW Data Viz Dashboard CML Field Step 5](cdw_dv_cml_dashboard_step5.png)
+### Step 5: Test the Workflow with Sample Queries
 
-Go to the **Expression** tab and enter the following value in the Expression field. This will allow you to call the REST API of the Model you have previously deployed.
+Test the workflow with the following queries:
+* *Who are our most active customers this month?*
+* *Which customers haven’t recharged in the last 30 days?*
+* *What’s the most popular offer among prepaid users?*
 
-```json
-cviz_rest('{"url":"<url_workspace>","accessKey":"<access_key>","colnames":["monthlycharges","totalcharges","tenure","gender","dependents","onlinesecurity","multiplelines","internetservice","seniorcitizen","techsupport","contract","streamingmovies","deviceprotection","paymentmethod","streamingtv","phoneservice","paperlessbilling","partner","onlinebackup"],"response_colname":"result"}')
-```
+   ![Test Workflow with Sample Queries](test_workflow_queries.png)
 
-![CDW Data Viz Dashboard CML Field Step 6](cdw_dv_cml_dashboard_step6.png)
+### Step 6: Deploy the Workflow
 
-We will now get values for the `<url_workspace>` and `<access_key>` placeholders from our deployed model in Cloudera AI.
+1. Click **Save & Next** > **Deploy**. 
+2. Deployment will take approximately 5 - 7 minutes to complete.
 
-### Retrieve Field Details from Cloudera AI model
+   ![Deploy Agentic Workflow](deploy_workflow_button.png)
 
-Open Cloudera AI in tab of the web browser. Open the Project that you created in [Lab 4 - Cloudera AI](../lab4-cai/README.md).
+### Step 7: Accessing Product Workflow
 
-Go to the section of Models of your project, and click on the Model that begins with the name _ModelViz_, followed by your assigned username.
+1. Go to the Home Page of Agent Studios.
+2. Select your Workflow from **Deployed Workflows**.
+3. Click on **Open Application UI**.
 
-![CDW Data Viz Dashboard CML Field Step 7](cdw_dv_cml_dashboard_step7.png)
+   ![Access Deployed Application UI](access_deployed_application.png)
 
-In the Overview tab, copy the **URL** that allows you to interact and call the workspace API.
+### Step 8: Play with your Live Application!
 
-![CDW Data Viz Dashboard CML Field Step 8](cdw_dv_cml_dashboard_step8.png)
+Test out your new Agentic AI application using sample business questions:
+* *Which customers are most likely to upgrade their plan in the next 30 days?*
+* *Which customers are eligible for loyalty rewards this month based on consistent usage and ARPU?*
+* *What are the plans offers by [competitor telecom] \<website> ?*
+* *How competitive are our roaming or data booster offers compared to [competitor telecom] \<website> ?*
 
-In Data Vizualization, replace the copied Workspace API value in the placeholder attribute `<url_workspace>` of the Expression field.
+   ![Live Application Chat Interface](live_application_chat_interface.png)
 
-![CDW Data Viz Dashboard CML Field Step 9](cdw_dv_cml_dashboard_step9.png)
-
-Returning to Cloudera AI, copy the **accessKey** of the model.
-
-![CDW Data Viz Dashboard CML Field Step 10](cdw_dv_cml_dashboard_step10.png)
-
-In Data Vizualization, replace the copied value in the placeholder attribute `<access_key>` of the Expression field.
-
-![CDW Data Viz Dashboard CML Field Step 11](cdw_dv_cml_dashboard_step11.png)
-
-Finish the process by clicking the **Validate Expression** button below the expression window.
-
-If the message appears in green _Validation Successful_, Click on **Apply** to save the settings made.
-
-![CDW Data Viz Dashboard CML Field Step 12](cdw_dv_cml_dashboard_step12.png)
-
-The new field should appear in the list of fields. Change the data type, selecting the type _Integer_, which is represented by the symbol **#**.
-
-![CDW Data Viz Dashboard CML Field Step 13](cdw_dv_cml_dashboard_step13.png)
-
-Finish the process by clicking on the green **SAVE** button in the top menu.
-
-![CDW Data Viz Dashboard CML Field Step 14](cdw_dv_cml_dashboard_step14.png)
-
-### Add Real Time Model Visual to Dashboard
-
-Return to the dashboard by selecting the option **VISUALS** from the top menu, and clicking on the name of the dashboard that was previously created.
-
-![CDW Data Viz Dashboard CML Field Step 15](cdw_dv_cml_dashboard_step15.png)
-
-Once in the dashboard, click on the button **Edit** which is in the upper left.
-
-![CDW Data Viz Dashboard CML Field Step 16](cdw_dv_cml_dashboard_step16.png)
-
-Edit the lower table by clicking on it and then on the **Build** button from the right vertical menu. Add the new field, **ChurnScore**, at the beginning of the table, by clicking and dragging from the option **Dimensions** available.
-
-![CDW Data Viz Dashboard CML Field Step 17](cdw_dv_cml_dashboard_step17.png)
-
-Click on the **REFRESH VISUAL** button to update the table.
-
-The new column, ChurnScore, should appear at the beginning of the table, with a value of numeric type.
-
-Finish the process of updating the dashboard by clicking the button **SAVE** from the top left menu.
-
-![CDW Data Viz Dashboard CML Field Step 18](cdw_dv_cml_dashboard_step18.png)
-
-**End of Lab 5**
+**End of Lab**
