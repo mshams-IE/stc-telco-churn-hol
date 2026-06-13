@@ -94,7 +94,7 @@ Take a moment to understand the main components of the Agent Studio interface:
 Test the workflow with the following queries:
 * *Who are our most active customers this month?*
 * *Which customers haven’t recharged in the last 30 days?*
-* *What’s the most popular offer among prepaid users?*
+
 
    ![Test Workflow with Sample Queries](test_workflow_queries.png)
 
