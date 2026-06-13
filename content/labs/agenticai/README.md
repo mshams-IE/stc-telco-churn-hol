@@ -22,9 +22,13 @@ In this lab, you will explore Cloudera Agent Studio to deploy an AI-driven Custo
 ## Requirements
 
 Ensure the following requirements and credentials are met in order to run this exercise (these will be shared by the Trainers):
+
 - [ ] Workload User and Password from User Profile
+      
 - [ ] Virtual Warehouse Name from CDW Impala host (provided below)
+      
 - [ ] Database Name from CDW Impala (`default_database`)
+      
 
 ---
 
