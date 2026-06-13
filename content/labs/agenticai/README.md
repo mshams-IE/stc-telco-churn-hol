@@ -84,6 +84,7 @@ Take a moment to understand the main components of the Agent Studio interface:
    ![Select AI Customer Retention Template](select_telco_template.png)
 
 4. **Understand the Workflow and Agents:**
+   
    * Click **Edit Agents** to understand the functionality of each agent and the flow (Name, Role, Backstory, Goal).
      
    * ⚠️ **Don’t Make Any Changes but Just Close.**
@@ -93,7 +94,7 @@ Take a moment to understand the main components of the Agent Studio interface:
    
    ![View Agent Details](view_agent_details_readonly.png)
 
-5. **Configure the requested parameters:**
+6. **Configure the requested parameters:**
    * Confirm with the Trainers for credentials.
      
    * `IMPALA_USER`: Workload user assigned to you (eg. user0XX).
