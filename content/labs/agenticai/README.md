@@ -95,17 +95,19 @@ Take a moment to understand the main components of the Agent Studio interface:
    ![View Agent Details](view_agent_details_readonly.png)
 
 6. **Configure the requested parameters:**
+   
    * Confirm with the Trainers for credentials.
+  
+   * `IMPALA_HOST`: coordinator-churn-hol-impala-001.dw-churn-hol-cdp-env.sm02r9.b0.cloudera.site.
+  
+   * `IMPALA_DATABASE`: 443.
      
    * `IMPALA_USER`: Workload user assigned to you (eg. user0XX).
      
    * `IMPALA_PASSWORD`: Workload password for your user.
      
-   * `IMPALA_HOST`: coordinator-churn-hol-impala-001.dw-churn-hol-cdp-env.sm02r9.b0.cloudera.site.
-     
    * `IMPALA_PORT`: default.
      
-   * `IMPALA_DATABASE`: 443.
      
    * Click **Save & Next**.
      
