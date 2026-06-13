@@ -42,15 +42,15 @@ use_directory_urls: false
 nav:
     - Home: 'README.md'
     - Labs:
+        - Lab 0 - Cloudera on Cloud Tenant Access Guide: 'guides/cdp-account/README.md'
         - Lab 1 - Cloudera Data Flow: 'labs/lab1-cdf/README.md'
         - Lab 2 - Cloudera Data Engineering: 'labs/lab2-cde/README.md'
         - Lab 3 - Cloudera Data Warehouse: 'labs/lab3-cdw/README.md'
         - Lab 4 - Cloudera AI: 'labs/lab4-cai/README.md'
         - Bonus lab -  Cloudera Agentic AI: 'labs/agenticai/README.md'
      #  - Lab 5 - Cloudera Data Vizualization: 'labs/lab5-dataviz/README.md'
-     
-    - Guides:
-        - Cloudera on cloud access: 'guides/cdp-account/README.md'
+ 
+        
 
 markdown_extensions:
   - admonition
