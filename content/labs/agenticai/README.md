@@ -35,14 +35,12 @@ Ensure the following requirements and credentials are met in order to run this e
 
 Click on the `{{ (cai_workbench_name) | default("only")}}` Workbench that appears.
 
-![Cloudera AI](cai_home_page.png)
-
 3. Go to **Projects** on the left side panel > Select **Public Projects** from the dropdown.
-5. Click on the publicly available project named **AgentiAI**.
+4. Click on the publicly available project named **AgentiAI**.
    
    ![Select Public Project HOL_Agent_Studio](cai_select_public_project.png)
 
-6. Click on **AI Studios** > **Agent Studio**.
+5. Click on **AI Studios** > **Agent Studio**.
    
    ![Open Agent Studio from Left Menu](cai_open_agent_studio.png)
 
