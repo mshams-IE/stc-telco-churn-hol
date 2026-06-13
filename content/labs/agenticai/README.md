@@ -138,7 +138,7 @@ Test the workflow with the following queries:
 
 ### Step 6: Deploy the Workflow
 
-1. Click **Save & Next** > **Deploy**.
+1. Click **Save & Next** > **Deploy**. (KEEP SAVE AS A TEMPLATE UNCHECKED)
    
 2. Deployment will take approximately 5 - 7 minutes to complete.
 
