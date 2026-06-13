@@ -27,13 +27,18 @@ Ensure the following requirements and credentials are met in order to run this e
 
 ### Step 1: Log in to Cloudera Platform & AI Workbench
 
-1. Login using the credentials provided by your trainer.
-2. Click on **Cloudera AI** > Select the **Cloudera-AI-Workshop** workbench.
-   
-   ![Select Cloudera AI Workbench](cai_select_workshop_workbench.png)
+1. From the Cloudera on cloud Tenant home page, click on Machine Learning.
 
-4. Go to **Projects** on the left side panel > Select **Public Projects** from the dropdown.
-5. Click on the publicly available project named **HOL_Agent_Studio**.
+![Cloudera on Cloud Tenant Home](cloudera_on_cloud_tenant_home.png)
+
+2. The Cloudera AI Home shows all available Workbenches, which is a compute resource allocation for Data Science related jobs.
+
+Click on the `{{ (cai_workbench_name) | default("only")}}` Workbench that appears.
+
+![Cloudera AI](cai_home_page.png)
+
+3. Go to **Projects** on the left side panel > Select **Public Projects** from the dropdown.
+5. Click on the publicly available project named **AgentiAI**.
    
    ![Select Public Project HOL_Agent_Studio](cai_select_public_project.png)
 
