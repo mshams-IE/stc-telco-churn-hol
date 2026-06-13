@@ -1,11 +1,6 @@
-# Lab 5 - Cloudera Data Vizualization
+# Bonus Lab - Cloudera Agentic AI
 
-In this lab you will dive deeper into Cloudera Data Vizualization by using the output of the machine learning model to enrich your DataViz application.
-
-**Goals**
-
-- [ ] Enrich Data Viz application with real time model scoring
-- [ ] Add a new field that makes calls to the Cloudera AI Machine Learning model
+In this lab you will Explore Cloudera Agentic Studio as a lowcode / nocode way to develop Agentic AI applications.
 
 ![Lab 5](lab5_dataviz.png)
 
