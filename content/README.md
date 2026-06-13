@@ -90,16 +90,16 @@ Welcome to this Data Lifecycle Hands on Lab, where you'll explore the full data 
 
     [:octicons-arrow-right-24: Go to Cloudera AI Lab Guide](labs/lab4-cai/README.md)
 
-- :simple-cloudera:{ .lg .middle } &nbsp; **Lab 5. Cloudera Data Vizualization**
+- :simple-cloudera:{ .lg .middle } &nbsp; **Bonus Lab. Cloudera Agentic AI**
 
     ***
 
     **Goals**
 
-    - [ ] Enrich Data Viz application with real time model scoring
+    - [ ] Build and Deploy AI Customer Retention Agentic workflow application
 
     ***
 
-    [:octicons-arrow-right-24: Go to Cloudera DataViz Lab Guide](labs/lab5-dataviz/README.md)
+    [:octicons-arrow-right-24: Go to Cloudera Agentic AI Lab Guide](labs/agenticai/README.md)
 
 </div>
