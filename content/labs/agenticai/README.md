@@ -56,13 +56,21 @@ Click on the `{{ (cai_workbench_name) | default("only")}}` Workbench that appear
 ### Step 2: Understand the Agent Studio Environment
 
 Take a moment to understand the main components of the Agent Studio interface:
+
 1. **Agentic Workflows:** Dashboard with End-to-End Agentic Workflows & Use Cases Development and Deployment.
+   
 2. **Tools Catalog:** Build custom Python tools to enhance your AI agents capabilities and supercharge your workflows.
+   
 3. **LLMs:** Hybrid Muti LLM Model Registry to Register language models which will be used to build agents and workflows.
+  
 4. **Deployed Workflows:** Single Pane of Glass to All Production Workflow and Use Cases.
+   
 5. **Draft Workflows:** Management and Collaboration all the Development Workflows.
+    
 6. **Workflow Templates:** Workflows Catalog to share and re-use the workflows.
+    
 7. **Create:** Build your Agentic Workflow from scratch.
+    
 
    ![Agent Studio Environment Overview](agent_studio_dashboard_overview.png)
 
@@ -70,46 +78,65 @@ Take a moment to understand the main components of the Agent Studio interface:
 ### Step 3: Building the Use Case Workflow
 
 1. Click **Create** > Select the Workflow from the **AI Customer Retention Template**.
+   
 2. Name the use case: **Userxxx - AI Customer Retention** (replace `Userxxx` with your assigned user).
    
    ![Select AI Customer Retention Template](select_telco_template.png)
 
-3. **Understand the Workflow and Agents:**
+4. **Understand the Workflow and Agents:**
    * Click **Edit Agents** to understand the functionality of each agent and the flow (Name, Role, Backstory, Goal).
+     
    * ⚠️ **Don’t Make Any Changes but Just Close.**
+     
    * Click **Save & Next** until you arrive at the **Configure** page.
+     
    
    ![View Agent Details](view_agent_details_readonly.png)
 
-4. **Configure the requested parameters:**
+5. **Configure the requested parameters:**
    * Confirm with the Trainers for credentials.
+     
    * `IMPALA_USER`: Workload user assigned to you (eg. user0XX).
+     
    * `IMPALA_PASSWORD`: Workload password for your user.
+     
    * `IMPALA_HOST`: coordinator-churn-hol-impala-001.dw-churn-hol-cdp-env.sm02r9.b0.cloudera.site.
+     
    * `IMPALA_PORT`: default.
+     
    * `IMPALA_DATABASE`: 443.
+     
    * Click **Save & Next**.
+     
    
    ![Configure Workspace Parameters](configure_workspace_parameters.png)
 
 *(FYI Only) Overview of the Data Base, Tables and Actual Data:*
 * **CRM Database:** It has `customer_profiles` table with the below data fields: `CustomerID, Name, Gender, Age, City, Country, PlanType, TenureMonths, ARPU`.
+  
 * **Core Database:** It has `usage_history` table with the below data fields: `CustomerID, UsageDate, DataUsed_GB, VoiceMinutes, SMSCount, RechargeAmount`.
+  
 * **Product Catalog:** It has `offer_catalog` table with the below data fields: `OfferID, OfferType, OfferName, Description, Eligibility, Discount, Validity`.
+  
 * **Competitive Offerings:** It is a web scraper that fetches data from any given competitor website.
+  
 
 ### Step 4: Test the Workflow with Sample Queries
 
 Test the workflow with the following queries:
+
 * *Who are our most active customers this month?*
+  
 * *Which customers haven’t recharged in the last 30 days?*
+  
 
 
    ![Test Workflow with Sample Queries](test_workflow_queries.png)
 
 ### Step 6: Deploy the Workflow
 
-1. Click **Save & Next** > **Deploy**. 
+1. Click **Save & Next** > **Deploy**.
+   
 2. Deployment will take approximately 5 - 7 minutes to complete.
 
    ![Deploy Agentic Workflow](deploy_workflow_button.png)
@@ -117,8 +144,11 @@ Test the workflow with the following queries:
 ### Step 7: Accessing Product Workflow
 
 1. Go to the Home Page of Agent Studios.
+   
 2. Select your Workflow from **Deployed Workflows**.
+   
 3. Click on **Open Application UI**.
+   
 
    ![Access Deployed Application UI](access_deployed_application.png)
 
