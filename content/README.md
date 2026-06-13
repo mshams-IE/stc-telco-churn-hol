@@ -46,9 +46,9 @@ Welcome to this Data Lifecycle Hands on Lab, where you'll explore the full data 
 
     ***
 
-    [:octicons-arrow-right-24: Go to Cloudera Data Flow Lab Guide](guides/cdp-account/README.md)
+    [:octicons-arrow-right-24: Go to Cloudera HoL Access Guide](guides/cdp-account/README.md)
 
-- :simple-apachenifi:{ .lg .middle } &nbsp; **Lab 0. Cloudera HoL Access Guid**
+- :simple-apachenifi:{ .lg .middle } &nbsp; **Lab 0. Cloudera HoL Access Guide**
 
     ***
 
