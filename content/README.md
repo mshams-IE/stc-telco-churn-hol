@@ -35,7 +35,7 @@ Welcome to this Data Lifecycle Hands on Lab, where you'll explore the full data 
 
 <div class="grid cards"  markdown>
 
-- :simple-apachenifi:{ .lg .middle } &nbsp; **Lab 0. Cloudera HoL Access Guide**
+- :simple-cloudera:{ .lg .middle } &nbsp; **Lab 0. Cloudera HoL Access Guide**
 
     ***
 
