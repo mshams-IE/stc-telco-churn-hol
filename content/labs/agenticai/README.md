@@ -7,10 +7,15 @@ In this lab, you will explore Cloudera Agent Studio to deploy an AI-driven Custo
 **Objective:** Stay ahead in a competitive telecom market by leveraging AI agents that continuously monitor customer activity and market dynamics — transforming customer experience and driving proactive retention strategies.
 
 **Business Impact:**
+
 * **Enhanced Customer Loyalty & Engagement:** AI-powered personalization increases satisfaction and reduces churn by offering timely upgrades, rewards, and retention incentives tailored to each user.
+  
 * **Boosted Revenue via Upsell & Cross-sell:** Real-time usage insights empower agents to recommend data boosters, family plans, roaming packs, and OTT bundles — maximizing revenue per user.
+  
 * **Competitive Edge through Market Intelligence:** Continuous analysis of competitor promotions enables SmartTel to respond instantly with attractive offers and localized pricing advantages.
+  
 * **Operational Efficiency & Regulatory Alignment:** Automated, auditable decision-making minimizes manual workloads, enhances campaign ROI, and ensures alignment with data privacy and regional telecom regulations.
+  
 
 ![Telecom Agentic Workflow Architecture](telecom_workflow_architecture_diagram.png)
 
