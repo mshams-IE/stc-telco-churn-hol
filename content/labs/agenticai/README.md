@@ -28,8 +28,7 @@ Ensure the following requirements and credentials are met in order to run this e
 ### Step 1: Log in to Cloudera Platform & AI Workbench
 
 1. Login using the credentials provided by your trainer.
-2. Update **Workload Password** > **Management Console** > **User Profile**.
-3. Click on **Cloudera AI** > Select the **Cloudera-AI-Workshop** workbench.
+2. Click on **Cloudera AI** > Select the **Cloudera-AI-Workshop** workbench.
    
    ![Select Cloudera AI Workbench](cai_select_workshop_workbench.png)
 
