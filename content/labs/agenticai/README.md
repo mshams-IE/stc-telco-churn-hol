@@ -116,10 +116,15 @@ Test the workflow with the following queries:
 ### Step 8: Play with your Live Application!
 
 Test out your new Agentic AI application using sample business questions:
+
 * *Which customers are most likely to upgrade their plan in the next 30 days?*
+  
 * *Which customers are eligible for loyalty rewards this month based on consistent usage and ARPU?*
+  
 * *What are the plans offers by [competitor telecom] \<website> ?*
+  
 * *How competitive are our roaming or data booster offers compared to [competitor telecom] \<website> ?*
+  
 
    ![Live Application Chat Interface](live_application_chat_interface.png)
 
