@@ -18,7 +18,7 @@ In this lab, you will explore Cloudera Agent Studio to deploy an AI-driven Custo
 
 Ensure the following requirements and credentials are met in order to run this exercise (these will be shared by the Trainers):
 - [ ] Workload User and Password from User Profile
-- [ ] Virtual Warehouse Name from CDW Impala (`hive_cai_data_connection_name`)
+- [ ] Virtual Warehouse Name from CDW Impala host (provided below)
 - [ ] Database Name from CDW Impala (`default_database`)
 
 ---
@@ -74,10 +74,11 @@ Take a moment to understand the main components of the Agent Studio interface:
 
 4. **Configure the requested parameters:**
    * Confirm with the Trainers for credentials.
-   * `workload_user`: Workload user from User Profile.
-   * `workload_pass`: Workload password from User Profile.
-   * `hive_cai_data_connection_name`: Virtual Warehouse Name from CDW Impala.
-   * `default_database`: Database Name from CDW Impala.
+   * `IMPALA_USER`: Workload user from User Profile.
+   * `IMPALA_PASSWORD`: Workload password from User Profile.
+   * `IMPALA_HOST`: coordinator-churn-hol-impala-001.dw-churn-hol-cdp-env.sm02r9.b0.cloudera.site.
+   * `IMPALA_PORT`: default.
+   * `IMPALA_DATABASE`: 443.
    * Click **Save & Next**.
    
    ![Configure Workspace Parameters](configure_workspace_parameters.png)
