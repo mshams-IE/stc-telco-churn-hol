@@ -8,7 +8,7 @@ Login to the Hands-on-lab environment using the SSO URL and credentials assigned
    
    > **Note:** If at any point of time during the lab you are asked to login as your session timed out, please use the same SSO link again.
 
-![CDP SSO Login](./CDP login SSO.png)
+![CDP SSO Login](./CDP_login_SSO.png.png)
 
 ## Setting your CDP workload password :
 
