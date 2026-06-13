@@ -35,7 +35,20 @@ Welcome to this Data Lifecycle Hands on Lab, where you'll explore the full data 
 
 <div class="grid cards"  markdown>
 
-- :simple-apachenifi:{ .lg .middle } &nbsp; **Lab 1. Cloudera Data Flow**
+- :simple-apachenifi:{ .lg .middle } &nbsp; **Lab 0. Cloudera HoL Access Guide**
+
+    ***
+
+    **Goals**
+
+    - [ ] Login to Cloudera Console 
+    - [ ] Set user WorkLoad password 
+
+    ***
+
+    [:octicons-arrow-right-24: Go to Cloudera Data Flow Lab Guide](guides/cdp-account/README.md)
+
+- :simple-apachenifi:{ .lg .middle } &nbsp; **Lab 0. Cloudera HoL Access Guid**
 
     ***
 
