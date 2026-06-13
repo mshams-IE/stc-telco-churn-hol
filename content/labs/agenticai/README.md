@@ -57,52 +57,8 @@ Take a moment to understand the main components of the Agent Studio interface:
 
    ![Agent Studio Environment Overview](agent_studio_dashboard_overview.png)
 
-### Step 3: [OPTIONAL] Create the WorkFlow Template for Telco 
 
-*(Note: This step is optional based on the lab type. If the trainer has already created the Workflow Template, you can ignore this step. OR you can follow this step to deploy a new workflow from scratch - Confirm with your Trainer.)*
-
-1. Click **Create** > **AI Customer Retention Workflow**.
-2. Configure the following toggles:
-   * **Is Conversational:** ON
-   * **Manager Agent:** ON
-   * **Default Manager**
-
-   ![Configure Agentic Workflow Settings](configure_workflow_toggles.png)
-
-3. Create the following 4 Agents:
-   * **Customer Analyst**
-     * **Role:** Customer Segmentation and Profiling Specialist.
-     * **Backstory:** Skilled in profiling and segmentation using customer data for personalized telecom strategies.
-     * **Goal:** Build customer personas using demographics, location, tenure, and ARPU to inform personalization strategies from `customer_profiles` table.
-     * **Tool:** CRM Database
-   * **Usage Analyst**
-     * **Role:** Interprets usage data including voice, SMS, data consumption, and recharge behavior.
-     * **Backstory:** Specializes in behavioral analytics to support targeting for marketing and engagement.
-     * **Goal:** Detect customer usage patterns like data, voice, sms, recharge, prepaid churn risks, or upsell-ready profiles using the data from `usage_history`.
-     * **Tool:** Core DataBase
-   * **Product Recommender**
-     * **Role:** Maintains detailed knowledge of telecom plans, loyalty programs, and ongoing offers.
-     * **Backstory:** Product expert helping align offerings with usage trends and customer potential.
-     * **Goal:** Match customers with the most relevant offers based on their profile and usage from `offer_catalog`.
-     * **Tool:** Product Catalog
-   * **Competitive Insights**
-     * **Role:** External Market Intelligence Agent.
-     * **Backstory:** Competitive intelligence agent scraping the latest Telecom promotions. Website shared by the user.
-     * **Goal:** Scrape website content given by the user for prepaid, postpaid, voice, data, sms offers and compare with internal product catalog, and propose competitive positioning.
-     * **Tool:** Competitive Offerings
-
-   ![Create and Configure AI Agents](create_ai_agents_setup.png)
-
-4. Configure the Connection Parameters (Confirm with the Trainers):
-   * `workload_user`: Workload user from User Profile.
-   * `workload_pass`: Workload password from User Profile.
-   * `hive_cai_data_connection_name`: Virtual Warehouse Name from CDW Impala.
-   * `default_database`: Database Name from CDW Impala.
-5. Click **Save & Next**.
-
-   ![Configure Connection Parameters](configure_database_connections.png)
-
-### Step 4: Building the Use Case Workflow
+### Step 3: Building the Use Case Workflow
 
 1. Click **Create** > Select the Workflow from the **AI Customer Retention Template**.
 2. Name the use case: **Userxxx - AI Customer Retention** (replace `Userxxx` with your assigned user).
@@ -132,7 +88,7 @@ Take a moment to understand the main components of the Agent Studio interface:
 * **Product Catalog:** It has `offer_catalog` table with the below data fields: `OfferID, OfferType, OfferName, Description, Eligibility, Discount, Validity`.
 * **Competitive Offerings:** It is a web scraper that fetches data from any given competitor website.
 
-### Step 5: Test the Workflow with Sample Queries
+### Step 4: Test the Workflow with Sample Queries
 
 Test the workflow with the following queries:
 * *Who are our most active customers this month?*
